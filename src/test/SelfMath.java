@@ -8,8 +8,18 @@ public class SelfMath {
 		
 		System.out.println(fak(5));
 		System.out.println(fib(5));
-		System.out.println(kgV(312, 143));
+		System.out.println(nCr(12, 3));
 		ggT(654321, 123456);
+	}
+	
+	// n über k
+	public static int nCr(int n, int k) {
+		int result = 0;
+		
+		result = fak(n)/(fak(k)*fak(n-k)); //TODO fakultät nicht rekursiv implementieren und hier ändern
+		//TODO Fakultäten kürzen, wird sonst zu groß
+		
+		return result;
 	}
 	
 	//Berechnet das kleinste gemeinsame vielfache von a und b
