@@ -1,14 +1,25 @@
 package test;
 
-public class TestClass {
+public class SelfMath {
 	
-	public static boolean outputEnabled = true;
+	public static boolean outputEnabled = false;
 
 	public static void main(String[] args) {
 		
 		System.out.println(fak(5));
 		System.out.println(fib(5));
+		System.out.println(kgV(312, 143));
 		ggT(654321, 123456);
+	}
+	
+	//Berechnet das kleinste gemeinsame vielfache von a und b
+	public static int kgV(int a, int b) {
+		int result = 0;
+		
+		int cggT = ggT(a, b);
+		result = (a*b)/cggT;
+		
+		return result;
 	}
 	
 	//Berechnet den groessten gemeinsamen Teiler von a und b
@@ -44,7 +55,9 @@ public class TestClass {
 			}
 		}
 		
+		if (outputEnabled) {
 		System.out.println("ggT ist: "+result);
+		}
 		return result;
 	}
 	
