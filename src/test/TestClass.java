@@ -11,7 +11,10 @@ public class TestClass {
 		ggT(654321, 123456);
 	}
 	
+	//Berechnet den groessten gemeinsamen Teiler von a und b
 	public static int ggT(int a, int b) {
+		
+		int result = 0;
 		
 		if (a == b) {
 			return a;
@@ -22,22 +25,26 @@ public class TestClass {
 			a = temp;
 		}
 		
-		int result = 0;
+		int r = 1;
 		
-		while (a%b != 0) {
-				
-			result = a%b;
+		while (r != 0) {
+			
+			r = a%b;
 			
 			if (outputEnabled) {
-				System.out.println(b+":"+result);
+				System.out.println(a+":"+b+" = "+a/b+"*"+b+"+"+r);
 			}
 	
-			if (result != 0) {
+			if (r != 0) {
 				a = b;
-				b = result;
+				b = r;
+			}
+			else {
+				result = b;
 			}
 		}
 		
+		System.out.println("ggT ist: "+result);
 		return result;
 	}
 	
